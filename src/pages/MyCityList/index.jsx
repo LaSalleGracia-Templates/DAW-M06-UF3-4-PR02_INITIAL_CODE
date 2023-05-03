@@ -1,10 +1,8 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { MyCitiesContext } from "../../context/MyCitiesContext";
-import useLocalStorage from "../../hooks/useLocalStorage";
-import { STORAGE } from "../../config/vars";
 
 function MyCityList () {
-  const { myCities, setMyCities, removeCity } = useContext(MyCitiesContext);
+  const { myCities, removeCity } = useContext(MyCitiesContext);
 
   const removeCityFromContext = (city) => removeCity(city);
   const round = (value, decimals) => Number(Math.round(value+'e'+decimals)+'e-'+decimals);
